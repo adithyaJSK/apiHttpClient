@@ -1,0 +1,26 @@
+REST ASSURED BASIC SYNTAX - API AUTOMATION
+
+
+import static io.restassured.RestAssured.*
+import static io.hamcrest.Matchers.*
+
+@Test
+
+public void validateNumberofCircuits(){
+given().
+when().
+	get("URL").
+then().
+	assertThat().
+	
+	statusCode(200).
+	
+	and().
+	
+	body("MRData.CircuitTable.circuits.circuitID", hasSize(20))
+
+	and().
+	
+	header("content-type", equalTo("application/json")
+
+}
